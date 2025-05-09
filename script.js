@@ -62,11 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
       DEFAULT: 0.07
     };
 
-    const taxRate = taxRates[state] !== undefined ? taxRates[state] : taxRates.DEFAULT;
-    const taxed = subtotal * taxRate;
-    const finalTotal = subtotal + taxed; // do not apply minimum here
-
-    document.getElementById("weightDisplay").textContent = `${totalWeight} lbs`;
+    
+  } lbs`;
     document.getElementById("priceDisplay").textContent = `$${subtotal.toFixed(2)}`;
     document.getElementById("taxDisplay").textContent = `$${taxed.toFixed(2)}`;
     document.getElementById("taxState").textContent = state;
