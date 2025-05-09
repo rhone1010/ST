@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lovingly Laundered - Order</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="LL/Style.css?v=1.8" />
+<script src="script.js?v=1.9"></script>
+</head>
+<body>
+  <div class="container">
+    <img src="../../../Desktop/Apps/LL/wp-content/uploads/LL/Logo Text White.png" alt="Logo" class="logo" />
+    <h1 class="title">Lovingly Laundered</h1>
+    <p class="note">Serving Petaluma and surrounding area</p>
+
+    <div class="section-title">Your Order</div>
+
+    <div class="input-row">
+      <span>LARGE BAGS</span>
+      <div class="custom-select">
+        <input id="largeBags" type="text" readonly />
+      </div>
+    </div>
+    <div class="input-desc">Leaf bag size</div>
+
+    <div class="input-row">
+      <span>SMALL BAGS</span>
+      <div class="custom-select">
+        <input id="smallBags" type="text" readonly />
+      </div>
+    </div>
+    <div class="input-desc">Kitchen garbage bag size</div>
+
+    <input type="text" id="stateInput" placeholder="State (e.g. CA)" class="input input-120" />
+
+    <div class="fee-box">
+      <div class="fee-line">WEIGHT: <strong id="weightDisplay">0 lbs</strong></div>
+      <div class="fee-line">EST PRICE: <strong id="priceDisplay">$0.00</strong></div>
+      <div class="fee-line">TAXES: <strong id="taxDisplay">$0.00</strong></div>
+      <div class="fee-line">TOTAL (with tax): <strong id="totalDisplay">$0.00</strong></div>
+    </div>
+
+    <div class="min-order">Minimum order: $30.00</div>
+    <button class="btn">Looks Good!</button>
+  </div>
+
+  <script src="../../../Desktop/Apps/LL/wp-content/uploads/LL/script.js"></script>
+</body>
+</html>
