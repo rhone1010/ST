@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lovingly Laundered - Order</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=1.11" />
-<script src="script.js?v=1.11"></script>
+  <link rel="stylesheet" href="style.css?v=1.10" />
+<script src="script.js?v=1.10"></script>
 </head>
 <body>
   <div class="container">
@@ -35,37 +35,42 @@
         <button class="btn">SUBMIT</button>
       </div>
     </div>
+<!-- ============================== -->
+<!-- Customer Ordering Section v1.1 -->
+<!-- ============================== -->
+
+<!-- === HTML (ORDER SECTION ONLY) === -->
 <div class="container-ordering">
-    <div class="section-title">Your Order</div>
+  <div class="section-title">Your Order</div>
 
-    <div class="input-row">
-      <span>LARGE BAGS</span>
-      <div class="custom-select">
-        <input id="largeBags" type="text" readonly />
-      </div>
+  <div class="input-row">
+    <span>LARGE BAGS</span>
+    <div class="custom-select">
+      <input id="largeBags" type="text" readonly />
     </div>
-    <div class="input-desc">Leaf bag size</div>
+  </div>
+  <div class="input-desc">Leaf bag size</div>
 
-    <div class="input-row">
-      <span>SMALL BAGS</span>
-      <div class="custom-select">
-        <input id="smallBags" type="text" readonly />
-      </div>
+  <div class="input-row">
+    <span>SMALL BAGS</span>
+    <div class="custom-select">
+      <input id="smallBags" type="text" readonly />
     </div>
-    <div class="input-desc">Kitchen garbage bag size</div>
+  </div>
+  <div class="input-desc">Kitchen garbage bag size</div>
 
-    <input type="text" id="stateInput" placeholder="State (e.g. CA)" class="input input-120" />
+  <!-- Removed stateInput field -->
 
-    <div class="fee-box">
-      <div class="fee-line">WEIGHT: <strong id="weightDisplay">0 lbs</strong></div>
-      <div class="fee-line">EST PRICE: <strong id="priceDisplay">$0.00</strong></div>
-      <div class="fee-line">TAXES: <strong id="taxDisplay">$0.00</strong></div>
-      <div class="fee-line">TOTAL (with tax): <strong id="totalDisplay">$0.00</strong></div>
-    </div>
+  <div class="fee-box">
+    <div class="fee-line">WEIGHT: <strong id="weightDisplay">0 lbs</strong></div>
+    <div class="fee-line">EST PRICE: <strong id="priceDisplay">$0.00</strong></div>
+    <div class="fee-line" id="taxLine">STATE TAX: <span id="taxState">CA</span> <strong id="taxDisplay">$0.00</strong></div>
+    <div class="fee-line">TOTAL (with tax): <strong id="totalDisplay">$0.00</strong></div>
+  </div>
 
-    <div class="min-order">Minimum order: $30.00</div>
-    <button class="btn">Looks Good!</button>
-</div>					   
+  <div class="min-order">Minimum order: $30.00</div>
+  <button class="btn">Looks Good!</button>
+</div>
 
 </body>
 </html>
