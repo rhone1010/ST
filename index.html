@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lovingly Laundered - Order</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=1.10" />
-<script src="script.js?v=1.10"></script>
+  <link rel="stylesheet" href="style.css?v=1.9" />
+<script src="script.js?v=1.9"></script>
 </head>
 <body>
   <div class="container">
@@ -36,10 +36,10 @@
       </div>
     </div>
 <!-- ============================== -->
-<!-- Customer Ordering Section v1.1 -->
+<!-- Customer Ordering Section v1.2 -->
 <!-- ============================== -->
 
-<!-- === HTML (ORDER SECTION ONLY) === -->
+<!-- === (ORDER SECTION ONLY) === -->
 <div class="container-ordering">
   <div class="section-title">Your Order</div>
 
@@ -66,11 +66,12 @@
     <div class="fee-line">EST PRICE: <strong id="priceDisplay">$0.00</strong></div>
     <div class="fee-line" id="taxLine">STATE TAX: <span id="taxState">CA</span> <strong id="taxDisplay">$0.00</strong></div>
     <div class="fee-line">TOTAL (with tax): <strong id="totalDisplay">$0.00</strong></div>
+    <div class="fee-line" id="minOrderMessage" style="color: #FFCCCC; font-size: 13px; display: none;">We are sorry, our minimum order is $30</div>
   </div>
 
   <div class="min-order">Minimum order: $30.00</div>
   <button class="btn">Looks Good!</button>
 </div>
-
+<!-- === (END ORDER SECTION ONLY) === -->
 </body>
 </html>

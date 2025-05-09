@@ -1,20 +1,22 @@
-<!-- === JavaScript (Dropdown + Estimation) === -->
+<script>
 document.addEventListener("DOMContentLoaded", () => {
   const smallInput = document.getElementById("smallBags");
   const largeInput = document.getElementById("largeBags");
   const taxState = document.getElementById("taxState");
+  const minOrderMessage = document.getElementById("minOrderMessage");
 
-  smallInput.addEventListener("click", () => showDropdown(smallInput, 8));
-  largeInput.addEventListener("click", () => showDropdown(largeInput, 5));
+  smallInput.addEventListener("click", () => showDropdown(smallInput, 7, "small"));
+  largeInput.addEventListener("click", () => showDropdown(largeInput, 5, "large"));
 
-  function showDropdown(input, max) {
+  function showDropdown(input, max, type) {
     closeExistingDropdowns();
 
     const dropdown = document.createElement("div");
     dropdown.className = "custom-select-dropdown";
-    dropdown.classList.add(input.id === "largeBags" ? "dropdown-position-large" : "dropdown-position-small");
+    dropdown.classList.add(type === "large" ? "dropdown-position-large" : "dropdown-position-small");
 
-    for (let i = 1; i <= max; i++) {
+    const values = [0, ...Array.from({ length: max }, (_, i) => i + 1)];
+    for (let i of values) {
       const option = document.createElement("div");
       option.textContent = i;
       option.onclick = () => {
@@ -46,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateEstimates() {
     const small = parseInt(smallInput.value) || 0;
     const large = parseInt(largeInput.value) || 0;
-    const state = "CA"; // Currently hardcoded — later can be passed from user info
+    const state = "CA";
 
     const totalWeight = (small * 7) + (large * 15);
     const subtotal = totalWeight * 1.3;
@@ -69,8 +71,15 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("taxDisplay").textContent = `$${taxed.toFixed(2)}`;
     document.getElementById("taxState").textContent = state;
     document.getElementById("totalDisplay").textContent = `$${finalTotal.toFixed(2)}`;
+
+    // Show or hide the polite warning about minimum subtotal
+    if (subtotal < minimumCharge) {
+      minOrderMessage.style.display = "block";
+    } else {
+      minOrderMessage.style.display = "none";
+    }
   }
 
   updateEstimates();
 });
-// JavaScript Document
+</script>
