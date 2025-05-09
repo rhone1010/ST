@@ -120,6 +120,7 @@ body {
   border-radius: 25px;
   cursor: pointer;
   transition: transform 0.2s ease;
+	font-size: 15px;
   ///font-weight: bold;///
 }
 
