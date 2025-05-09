@@ -104,12 +104,12 @@ body {
 /* Positioning Overrides */
 .dropdown-position-large {
   position: absolute;
-  left: -275px;
+  left: -180px;
 }
 
 .dropdown-position-small {
   position: absolute;
-  left: -210px;
+  left: -245px;
 }
 
 /* Dropdown Bubbles */
