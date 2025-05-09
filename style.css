@@ -1,3 +1,4 @@
+/* General Styles */
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
@@ -35,6 +36,7 @@ body {
   font-weight: bold;
 }
 
+/* Input Styles */
 .input-row {
   display: flex;
   justify-content: space-between;
@@ -65,14 +67,11 @@ body {
   width: 300px;
 }
 
-.dropdown-position-large {
-  left: -275px;  /* <-- adjust this freely */
+.input-240 {
+  width: 300px;
 }
 
-.dropdown-position-small {
-  left: -210px;  /* <-- or whatever works best for smallBags */
-}
-
+/* Custom Select Styles */
 .custom-select {
   position: relative;
 }
@@ -117,7 +116,18 @@ body {
   background-color: #f3e7f0;
 }
 
+/* Dropdown Positioning */
+.dropdown-position-large {
+  position: absolute;
+  left: -275px;
+}
 
+.dropdown-position-small {
+  position: absolute;
+  left: -210px;
+}
+
+/* Fee Box */
 .fee-box {
   background: black;
   color: white;
@@ -137,6 +147,7 @@ body {
   margin-bottom: 30px;
 }
 
+/* Button Styles */
 .btn {
   background: black;
   color: white;
