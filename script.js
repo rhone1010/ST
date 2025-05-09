@@ -64,6 +64,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const taxRate = taxRates[state] !== undefined ? taxRates[state] : taxRates.DEFAULT;
     const taxed = subtotal * taxRate;
+    const finalTotal = subtotal + taxed; // do not apply minimum here
+
+    document.getElementById("weightDisplay").textContent = `${totalWeight} lbs`;
+    document.getElementById("priceDisplay").textContent = `$${subtotal.toFixed(2)}`;
+    document.getElementById("taxDisplay").textContent = `$${taxed.toFixed(2)}`;
+    document.getElementById("taxState").textContent = state;
+    document.getElementById("totalDisplay").textContent = `$${finalTotal.toFixed(2)}`;
+
+    // Hide message during input; now only triggered on submit
+    minOrderMessage.style.display = "none";
+  };
+
+    const taxRate = taxRates[state] !== undefined ? taxRates[state] : taxRates.DEFAULT;
+    const taxed = subtotal * taxRate;
     const finalTotal = Math.max(subtotal + taxed, minimumCharge);
 
     document.getElementById("weightDisplay").textContent = `${totalWeight} lbs`;
@@ -81,5 +95,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   updateEstimates();
+
+  document.getElementById("submitOrder").addEventListener("click", () => {
+    const small = parseInt(smallInput.value) || 0;
+    const large = parseInt(largeInput.value) || 0;
+    const subtotal = ((small * 7) + (large * 15)) * 1.3;
+    if (subtotal < 30) {
+      minOrderMessage.style.display = "block";
+    } else {
+      minOrderMessage.style.display = "none";
+      // Proceed with actual order handling logic
+      alert("Order ready to submit.");
+    }
+  });
 });
 </script>
