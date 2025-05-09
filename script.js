@@ -8,36 +8,37 @@ document.addEventListener("DOMContentLoaded", () => {
   smallInput.addEventListener("click", () => showDropdown(smallInput, 8));
   largeInput.addEventListener("click", () => showDropdown(largeInput, 5));
 
-  function showDropdown(input, max) {
-    closeExistingDropdowns();
+function showDropdown(input, max) {
+  closeExistingDropdowns();
 
-    const dropdown = document.createElement("div");
-    dropdown.className = "custom-select-dropdown";
+  const dropdown = document.createElement("div");
+  dropdown.className = "custom-select-dropdown";
+  dropdown.classList.add(input.id === "largeBags" ? "dropdown-position-large" : "dropdown-position-small");
 
-    for (let i = 1; i <= max; i++) {
-      const option = document.createElement("div");
-      option.textContent = i;
-      option.onclick = () => {
-        input.value = i;
-        dropdown.remove();
-        updateEstimates();
-      };
-      dropdown.appendChild(option);
-    }
+  for (let i = 1; i <= max; i++) {
+    const option = document.createElement("div");
+    option.textContent = i;
+    option.onclick = () => {
+      input.value = i;
+      dropdown.remove();
+      updateEstimates();
+    };
+    dropdown.appendChild(option);
+  }
 
-    input.parentNode.appendChild(dropdown);
+  input.parentNode.appendChild(dropdown);
 
-    setTimeout(() => {
-      document.addEventListener("click", closeDropdown);
-    }, 0);
+  setTimeout(() => {
+    document.addEventListener("click", closeDropdown);
+  }, 0);
 
-    function closeDropdown(e) {
-      if (!dropdown.contains(e.target) && e.target !== input) {
-        dropdown.remove();
-        document.removeEventListener("click", closeDropdown);
-      }
+  function closeDropdown(e) {
+    if (!dropdown.contains(e.target) && e.target !== input) {
+      dropdown.remove();
+      document.removeEventListener("click", closeDropdown);
     }
   }
+}
 
   function closeExistingDropdowns() {
     document.querySelectorAll(".custom-select-dropdown").forEach(d => d.remove());
