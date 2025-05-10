@@ -45,41 +45,37 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".custom-select-dropdown").forEach(d => d.remove());
   }
 
-  function updateEstimates() {
-    const small = parseInt(smallInput.value) || 0;
-    const large = parseInt(largeInput.value) || 0;
-    const state = "CA";
+function updateEstimates() {
+  const small = parseInt(smallInput.value) || 0;
+  const large = parseInt(largeInput.value) || 0;
+  const state = "CA";
 
-    const totalWeight = (small * 7) + (large * 15);
-    const subtotal = totalWeight * 1.3;
-    const minimumCharge = 30.00;
+  const totalWeight = (small * 7) + (large * 15);
+  const subtotal = totalWeight * 1.3;
+  const minimumCharge = 30.00;
 
-    const taxRates = {
-      CA: 0.0925,
-      NY: 0.088,
-      TX: 0.0825,
-      FL: 0.06,
-      DEFAULT: 0.07
-    
-  }
+  const taxRates = {
+    CA: 0.0925,
+    NY: 0.088,
+    TX: 0.0825,
+    FL: 0.06,
+    DEFAULT: 0.07
   };
 
-    const taxRate = taxRates[state] !== undefined ? taxRates[state] : taxRates.DEFAULT;
-    const taxed = subtotal * taxRate;
-    const finalTotal = Math.max(subtotal + taxed, minimumCharge);
+  const taxRate = taxRates[state] !== undefined ? taxRates[state] : taxRates.DEFAULT;
+  const taxed = subtotal * taxRate;
+  const finalTotal = subtotal + taxed;
 
-    document.getElementById("weightDisplay").textContent = `${totalWeight} lbs`;
-    document.getElementById("priceDisplay").textContent = `$${subtotal.toFixed(2)}`;
-    document.getElementById("taxDisplay").textContent = `$${taxed.toFixed(2)}`;
-    document.getElementById("taxState").textContent = state;
-    document.getElementById("totalDisplay").textContent = `$${finalTotal.toFixed(2)}`;
+  document.getElementById("weightDisplay").textContent = `${totalWeight} lbs`;
+  document.getElementById("priceDisplay").textContent = `$${subtotal.toFixed(2)}`;
+  document.getElementById("taxDisplay").textContent = `$${taxed.toFixed(2)}`;
+  document.getElementById("taxState").textContent = state;
+  document.getElementById("totalDisplay").textContent = `$${finalTotal.toFixed(2)}`;
 
-    // Show or hide the polite warning about minimum subtotal
-    if (subtotal < minimumCharge) {
-      minOrderMessage.style.display = "block";
-    } else {
-      minOrderMessage.style.display = "none";
-    }
+  // Hide warning during entry — only triggered on button click
+  minOrderMessage.style.display = "none";
+}
+
   }
 
   updateEstimates();
