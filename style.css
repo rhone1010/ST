@@ -1,3 +1,4 @@
+/* === Global === */
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
@@ -5,57 +6,181 @@ body {
   color: white;
   text-align: center;
 }
-.container-ordering {
+
+.container {
   max-width: 400px;
   margin: 0 auto;
-  padding: 20px 40px;
+  padding: 20px;
 }
+
+.logo {
+  width: 280px;
+  margin: 20px auto 10px;
+}
+
+.note {
+  font-size: 13px;
+  color: #f2f2f2;
+  margin-bottom: 20px;
+}
+
+/* === Section Titles === */
+.section-title {
+  font-size: 16px;
+  margin: 20px 0 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* === Inputs === */
+.input {
+  height: 33px;
+  border: none;
+  background: white;
+  color: #97357B;
+  border-radius: 25px;
+  padding: 0 12px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.input-120 {
+  width: 300px;
+}
+
+.input-240 {
+  width: 300px;
+}
+
 .input-row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
 }
+
+.input-desc {
+  font-size: 12px;
+  text-align: left;
+  color: #eee;
+  margin-bottom: 10px;
+}
+
+/* === Custom Select === */
 .custom-select {
   position: relative;
 }
+
 .custom-select input {
   height: 30px;
   width: 30px;
   text-align: center;
   border-radius: 50%;
-  background: white;
   border: none;
-  font-weight: bold;
+  background: white;
   color: #97357B;
+  font-weight: bold;
+  cursor: pointer;
 }
+
+/* Dropdown Container */
 .custom-select-dropdown {
   position: absolute;
   top: -2px;
   display: flex;
   gap: 5px;
-  padding: 4px;
+  padding: 4px 4px;
   border-radius: 30px;
   background-color: transparent;
   z-index: 9999;
 }
+
+/* Positioning Overrides */
 .dropdown-position-large {
   left: -180px;
 }
+
 .dropdown-position-small {
   left: -275px;
 }
+
+/* Dropdown Bubbles */
 .custom-select-dropdown div {
   padding: 4px 10px;
   background-color: white;
   color: #97357B;
   border-radius: 25px;
   cursor: pointer;
+  transition: transform 0.2s ease;
+  font-size: 15px;
 }
-.btn {
-  margin-top: 20px;
-  padding: 10px 20px;
+
+.custom-select-dropdown div:hover {
+  transform: scale(1.1);
+  background-color: #f3e7f0;
+}
+
+/* === Fee Box === */
+.fee-box {
   background: black;
   color: white;
+  border-radius: 25px;
+  padding: 15px;
+  margin: 15px 0;
+}
+
+.fee-line {
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.min-order {
+  font-size: 13px;
+  color: #eee;
+  margin-bottom: 30px;
+}
+
+/* === Button === */
+.btn {
+  background: black;
+  color: white;
+  padding: 12px 24px;
   border: none;
   border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background: #222;
+}
+
+/* === Message Area === */
+.messagebox {
+  width: 300px;
+  height: 100px;
+  resize: vertical;
+  padding: 10px;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 20px;
+  border: none;
+  box-sizing: border-box;
+  background-color: white;
+  color: #97357B;
+  margin-bottom: 10px;
+}
+
+.info-box {
+  padding: 20px 0;
+}
+
+/* === Container for Order Section === */
+.container-ordering {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px 40px;
 }
