@@ -8,6 +8,35 @@
   <link rel="stylesheet" href="style.css?v=1.0" />
 </head>
 <body>
+  <div class="container">
+    <img src="Logo Text White.png" alt="Logo" class="logo" />
+    <p class="note">Serving Petaluma and surrounding area</p>
+
+    <!-- Customer Info Section -->
+    <div class="info-box">
+      <h2>Your Information</h2>
+      <input type="text" class="input input-120" placeholder="First Name" />
+      <input type="text" class="input input-120" placeholder="Last Name" />
+      <input type="text" class="input input-240" placeholder="Street" />
+      <input type="text" class="input input-240" placeholder="City" />
+      <input type="text" class="input input-120" placeholder="State/Zip" />
+      <input type="tel" class="input input-240" placeholder="Phone #" />
+      <input type="email" class="input input-240" placeholder="Email" />
+      <button class="btn">NEXT</button>
+    </div>
+
+    <!-- Messaging Section -->
+    <div class="info-box message-box">
+      <h2>Message Kristen</h2>
+      <p>Lori A</p>
+      <p>ORDER # AB387</p>
+      <textarea placeholder="Type your message here..." class="messagebox"></textarea>
+      <p class="small-text">*You can also message via the text message you received*</p>
+      <button class="btn">SUBMIT</button>
+    </div>
+  </div>
+
+  <!-- Order Section -->
   <div class="container-ordering">
     <div class="section-title">Your Order</div>
     <div class="input-row">
@@ -34,6 +63,7 @@
     <div class="min-order">Minimum order: $30.00</div>
     <button class="btn" id="submitOrder">Looks Good!</button>
   </div>
+
   <script src="script.js?v=1.0"></script>
 </body>
 </html>
