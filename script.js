@@ -60,17 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
       TX: 0.0825,
       FL: 0.06,
       DEFAULT: 0.07
-    };
-
     
-  } lbs`;
-    document.getElementById("priceDisplay").textContent = `$${subtotal.toFixed(2)}`;
-    document.getElementById("taxDisplay").textContent = `$${taxed.toFixed(2)}`;
-    document.getElementById("taxState").textContent = state;
-    document.getElementById("totalDisplay").textContent = `$${finalTotal.toFixed(2)}`;
-
-    // Hide message during input; now only triggered on submit
-    minOrderMessage.style.display = "none";
+  }
   };
 
     const taxRate = taxRates[state] !== undefined ? taxRates[state] : taxRates.DEFAULT;
