@@ -1,3 +1,4 @@
+<script>
 document.addEventListener("DOMContentLoaded", () => {
   const smallInput = document.getElementById("smallBags");
   const largeInput = document.getElementById("largeBags");
@@ -9,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showDropdown(input, max, type) {
     closeExistingDropdowns();
+
     const dropdown = document.createElement("div");
     dropdown.className = "custom-select-dropdown";
     dropdown.classList.add(type === "large" ? "dropdown-position-large" : "dropdown-position-small");
@@ -50,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const totalWeight = (small * 7) + (large * 15);
     const subtotal = totalWeight * 1.3;
+    const minimumCharge = 30.00;
 
     const taxRates = {
       CA: 0.0925,
@@ -57,11 +60,15 @@ document.addEventListener("DOMContentLoaded", () => {
       TX: 0.0825,
       FL: 0.06,
       DEFAULT: 0.07
-    };
+    
+  }
+  };
 
     const taxRate = taxRates[state] !== undefined ? taxRates[state] : taxRates.DEFAULT;
     const taxed = subtotal * taxRate;
-    const finalTotal = subtotal + taxed;
+    $1
+    const tip = (subtotal + taxed) * 0.2;
+    document.getElementById("tipDisplay").textContent = `$${tip.toFixed(2)}`;
 
     document.getElementById("weightDisplay").textContent = `${totalWeight} lbs`;
     document.getElementById("priceDisplay").textContent = `$${subtotal.toFixed(2)}`;
@@ -69,7 +76,12 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("taxState").textContent = state;
     document.getElementById("totalDisplay").textContent = `$${finalTotal.toFixed(2)}`;
 
-    minOrderMessage.style.display = "none";
+    // Show or hide the polite warning about minimum subtotal
+    if (subtotal < minimumCharge) {
+      minOrderMessage.style.display = "block";
+    } else {
+      minOrderMessage.style.display = "none";
+    }
   }
 
   updateEstimates();
@@ -78,12 +90,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const small = parseInt(smallInput.value) || 0;
     const large = parseInt(largeInput.value) || 0;
     const subtotal = ((small * 7) + (large * 15)) * 1.3;
-
     if (subtotal < 30) {
       minOrderMessage.style.display = "block";
     } else {
       minOrderMessage.style.display = "none";
+      // Proceed with actual order handling logic
       alert("Order ready to submit.");
     }
   });
 });
+</script>
